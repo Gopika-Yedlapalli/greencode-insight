@@ -39,7 +39,7 @@ html {
 }
 
 body {
-  font-family: 'Inter', system-ui, sans-serif;
+  font-family: "Inter", system-ui, sans-serif;
   background: radial-gradient(circle at top, #020617, #000000 70%);
   color: var(--text-main);
   line-height: 1.7;
@@ -64,26 +64,47 @@ body {
 }
 
 .logo {
-  font-weight: 700;
-  letter-spacing: 0.3px;
-  animation: fadeDown 0.8s ease forwards;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: 600;
+}
+
+.logo-img {
+  height: 38px;
+  width: 38px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.logo-text {
+  font-size: 1.05rem;
+  color: #e5e7eb;
+  white-space: nowrap;
 }
 
 .nav-links a {
   text-decoration: none;
+  display: inline-block;
   margin-left: 1.6rem;
   font-size: 0.9rem;
   color: white;
   position: relative;
-  transition: color 0.3s ease;
+  transition:
+    color 0.2s ease,
+    transform 0.2s ease,
+    text-shadow 0.2s ease;
 }
 
 .nav-links a:hover {
   color: var(--text-main);
+  transform: translateY(-3px);
+  text-shadow: 0 0 5px rgba(99, 102, 241, 0.7);
+  font-weight: 500;
 }
 
 .nav-links a::after {
-  content: '';
+  content: "";
   position: absolute;
   left: 0;
   bottom: -6px;
@@ -101,21 +122,12 @@ body {
   padding: 0.45rem 1.2rem;
   border-radius: 999px;
   font-weight: 600;
-}
-
-.signup-btn {
-  background: linear-gradient(
-    135deg,
-    #3c437e, 
-    #5158a2
-  );
-  box-shadow: 0 0 35px rgba(99, 102, 241, 0.4);
+  background: linear-gradient(135deg, #3c437e, #5158a2);
 }
 
 .signup-btn:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 0 55px rgba(57, 58, 163, 0.6);
-  
+  transform: translateY(-4px);
+  box-shadow: 0 0 10px rgba(99, 102, 241, 0.6);
 }
 
 .hero {
@@ -177,18 +189,18 @@ body {
 }
 
 .btn.primary {
-  background: linear-gradient(
-    135deg,
-    #3c437e,
-    #5158a2
-  );
+  background: linear-gradient(135deg, #3c437e, #5158a2);
   color: #ffffff;
   box-shadow: 0 0 35px rgba(99, 102, 241, 0.4);
+  font-size: 0.9rem;     
+  font-weight: 600;
+  letter-spacing: 0.07em;
+  margin-top: 10px;
 }
 
 .btn.primary:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 0 55px rgba(99, 102, 241, 0.6);
+  transform: translateY(-4px);
+  box-shadow: 0 0 20px rgba(99, 102, 241, 0.6);
 }
 
 .code-window {
@@ -315,8 +327,13 @@ body {
   animation: floatSlow 6s ease-in-out infinite;
 }
 
-.stat-card:nth-child(2) { animation-delay: 1.5s; }
-.stat-card:nth-child(3) { animation-delay: 3s; }
+.stat-card:nth-child(2) {
+  animation-delay: 1.5s;
+}
+
+.stat-card:nth-child(3) {
+  animation-delay: 3s;
+}
 
 .stat-value {
   font-size: 2rem;
@@ -352,7 +369,9 @@ body {
   border-radius: 18px;
   padding: 2rem;
   backdrop-filter: blur(16px);
-  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  transition:
+    transform 0.4s ease,
+    box-shadow 0.4s ease;
 }
 
 .for-card:hover {
@@ -387,28 +406,57 @@ body {
 }
 
 @keyframes fadeUp {
-  from { opacity: 0; transform: translateY(25px); }
-  to { opacity: 1; transform: translateY(0); }
+  from {
+    opacity: 0;
+    transform: translateY(25px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 @keyframes fadeDown {
-  from { opacity: 0; transform: translateY(-15px); }
-  to { opacity: 1; transform: translateY(0); }
+  from {
+    opacity: 0;
+    transform: translateY(-15px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 @keyframes fadeMessy {
-  0%, 45% { opacity: 1; }
-  60%, 100% { opacity: 0; }
+  0%,
+  45% {
+    opacity: 1;
+  }
+  60%,
+  100% {
+    opacity: 0;
+  }
 }
 
 @keyframes fadeClean {
-  0%, 45% { opacity: 0; }
-  60%, 100% { opacity: 1; }
+  0%,
+  45% {
+    opacity: 0;
+  }
+  60%,
+  100% {
+    opacity: 1;
+  }
 }
 
 @keyframes floatSlow {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-10px); }
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
 }
 
 @keyframes revealLines {
@@ -504,6 +552,7 @@ body {
 .auth-form select option {
   color: #000000;
   background-color: #ffffff;
+  border-color: rgba(99, 102, 241, 0.5);
 }
 
 .auth-form input::placeholder {
@@ -654,7 +703,7 @@ body {
   color: var(--accent-soft);
   cursor: pointer;
   font-size: 0.85rem;
-  margin-left: auto; 
+  margin-left: auto;
   display: block;
 }
 
@@ -664,7 +713,7 @@ body {
 }
 
 .auth-form .btn.primary {
-  align-self: flex-end;  
+  align-self: flex-end;
 }
 
 .auth-switch {
@@ -772,11 +821,7 @@ body {
   width: 40px;
   height: 40px;
   border-radius: 50%;
-  background: linear-gradient(
-    135deg,
-    #3c437e,
-    #5158a2
-  );
+  background: linear-gradient(135deg, #3c437e, #5158a2);
   color: #ffffff;
   font-weight: 700;
   font-size: 0.95rem;
@@ -836,7 +881,9 @@ body {
   text-align: left;
   border-radius: 10px;
   cursor: pointer;
-  transition: background 0.25s ease, color 0.25s ease;
+  transition:
+    background 0.25s ease,
+    color 0.25s ease;
 }
 
 .profile-dropdown button:hover {
@@ -912,7 +959,9 @@ body {
   font-size: 0.9rem;
   text-align: left;
   cursor: pointer;
-  transition: border-color 0.25s ease, box-shadow 0.25s ease;
+  transition:
+    border-color 0.25s ease,
+    box-shadow 0.25s ease;
 }
 
 .form-dropdown-trigger:hover {
@@ -1001,7 +1050,9 @@ body {
   background: rgba(255, 255, 255, 0.03);
   color: var(--text-main);
   font-size: 0.9rem;
-  transition: border-color 0.25s ease, box-shadow 0.25s ease;
+  transition:
+    border-color 0.25s ease,
+    box-shadow 0.25s ease;
 }
 
 .contact-form textarea {
@@ -1052,7 +1103,7 @@ body {
 }
 
 .card-close {
-  all: unset; 
+  all: unset;
   position: absolute;
   top: 20px;
   right: 12px;

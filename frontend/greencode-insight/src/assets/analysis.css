@@ -1,0 +1,112 @@
+.file-input-hidden {
+  display: none;
+}
+
+.file-trigger {
+  width: 100%;
+  padding: 0.85rem 1rem;
+  margin-bottom: 1.2rem;
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  background: rgba(255, 255, 255, 0.04);
+  color: var(--text-muted);
+  font-size: 0.85rem;
+  cursor: pointer;
+  transition:
+    border-color 0.25s ease,
+    background 0.25s ease,
+    color 0.25s ease;
+}
+
+.file-trigger:hover {
+  color: var(--text-main);
+  background: rgba(255, 255, 255, 0.06);
+}
+
+.file-trigger:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.analysis-or {
+  text-align: center;
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  margin: 0.6rem 0 0.8rem;
+}
+
+.file-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  list-style: none;
+  padding: 0;
+  margin: 0.8rem 0 1.2rem;
+}
+
+.file-list li {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.45rem 0.75rem;
+  border-radius: 999px;
+  background: rgba(2, 6, 26, 0.483);
+  backdrop-filter: blur(18px);
+  border: 1px solid var(--border-soft);
+  color: var(--text-main);
+  font-size: 0.75rem;
+  backdrop-filter: blur(12px);
+  transition:
+    background 0.25s ease,
+    border-color 0.25s ease,
+    transform 0.15s ease;
+}
+
+.file-list li:hover {
+  border-color: rgba(72, 75, 202, 0.483);
+  background: rgba(2, 6, 26, 0.363);
+  backdrop-filter: blur(20px);
+  transform: translateY(-1px);
+}
+
+.file-list li span {
+  max-width: 160px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.file-list li button {
+  all: unset;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.8rem;
+  line-height: 1;
+  cursor: pointer;
+  background: rgba(99, 101, 241, 0);
+  color: rgb(230, 230, 233);
+  transition:
+    background 0.25s ease,
+    color 0.25s ease,
+    box-shadow 0.25s ease,
+    transform 0.25s ease;
+}
+
+.file-list li button:hover {
+  color: #ffffff;
+  text-shadow:
+    0 0 30px rgba(255, 255, 255, 0.999);
+  transform: scale(1.10);
+}
+
+.file-list:focus-visible {
+  outline: none;
+  background: rgba(99, 102, 241, 0.18);
+  box-shadow:
+    0 0 0 2px rgba(99, 102, 241, 0.35),
+    0 0 14px rgba(99, 102, 241, 0.28);
+}

@@ -11,4 +11,10 @@ class Settings:
         os.getenv("ACCESS_TOKEN_EXPIRE_MINUTES", 60)
     )
 
+    SUPPORTED_EXTENSIONS = {".py", ".java"}
+    MAX_FILES: int = int(os.getenv("MAX_ANALYSIS_FILES", 5))
+    BASE_ANALYSIS_PATH: str = os.getenv(
+        "BASE_ANALYSIS_PATH", "/tmp/greencode"
+    )
+
 settings = Settings()

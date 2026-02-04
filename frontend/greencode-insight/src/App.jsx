@@ -7,6 +7,7 @@ import ResetPassword from "./pages/ResetPassword";
 import VerifyOtp from "./pages/VerifyOtp";
 import Profile from "./pages/Profile";
 import Contact from "./pages/Contact";
+import Analysis from "./pages/Analysis";
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
       <Route path="/verify-otp" element={<VerifyOtp />} />
       <Route path="/profile" element={<Profile />} />
       <Route path="/contact" element={<Contact />} />
+      <Route path="/analysis" element={<Analysis />} />
     </Routes>
   );
 }
